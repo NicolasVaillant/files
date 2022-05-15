@@ -1,0 +1,169 @@
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+@mixin column{
+    flex-direction: column;
+}
+@mixin row{
+    flex-direction: row;
+}
+@mixin flex-col{
+    @include flex;
+    @include column;
+}
+@mixin flex-row{
+    @include flex;
+    @include row;
+}
+body{
+    font-family: 'Open Sans', sans-serif, Bahnschrift;
+    font-weight: initial;
+    @include flex-col;
+    main{
+        width: 60%;
+        height: auto;
+        background: var(--w);
+        @include flex-col;
+        position: relative;
+        header{
+            display: none!important;
+            @include flex-col;
+            width: 100%;
+            padding: 1em 0 0 0;
+            .line{
+                @include flex-row;
+                padding: 1em 0;
+                width: 100%;
+                justify-content: space-between;
+                img{
+                    max-height: 2em;
+                    width: auto;
+                }
+            }
+            hr{
+                width: 100%;
+                border: 1px solid grey;
+                background: grey;
+                border-radius: 1000px;
+            }
+        }
+        .explication,
+        .token-container{
+            border: 1px solid red;
+            background: #ee97978a;
+            width: 100%;
+            margin: 1em 0;
+            padding: 1em;
+            border-radius: 5px;
+            @include flex-row;
+            gap: 1em;
+        }
+        .explication{
+            margin: 1em 0 0 0;
+        }
+        .token-container{
+            border: 1px solid grey;
+            background: #80808026;
+
+            input,
+            button{
+                padding: 0.5em;
+                border-radius: 5px;
+                border: 1px solid grey;
+                height: 100%;
+            }
+            button{
+                outline: none;
+                cursor: pointer;
+            }
+        }
+        .wrapper{
+            width: 100%;
+            background: var(--w);
+            border-radius: 5px;
+
+            @include flex-col;
+            align-items: flex-start;
+
+            &.init{
+                min-height: 30vh;
+                border: 2px dashed grey;
+                align-items: center!important;
+            }
+            & .background{
+                position: relative;
+                .fa-file-alt{
+                    font-size: 5em;
+                    color: #80808026;
+                }
+                .fa-arrow-alt-circle-down{
+                    position: absolute;
+                    font-size: 1.5em;
+                    bottom: -0.25em;
+                    right: -0.25em;
+                    color: var(--bl);
+                    opacity: .6;
+                }
+            }
+            .elements{
+                @include flex-row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 1em;
+                flex-wrap: wrap;
+                .card-dl{
+                    border: 1px solid grey;
+                    background: var(--w);
+                    min-width: 16vw;
+                    border-radius: 5px;
+                    @include flex-col;
+                    cursor: pointer;
+                    .visual-element{
+                        width: 100%;
+                        height: 20vh;
+                        background: #80808026;
+                        @include flex;
+                        color: grey;
+                        i{
+                            font-size: 3em;
+                        }
+                    }
+                    .description-line{
+                        width: 100%;
+                        @include flex-row;
+                        justify-content: space-between;
+                        padding: 1em;
+                        gap: 1em;
+
+                        .text-element{
+                            @include flex-col;
+                            align-items: flex-start;
+                            color: grey;
+                        }
+                        i{
+                            color: var(--bl);
+                        }
+                    }
+                }
+            }
+            .noFile{
+                @include flex-col;
+                gap: 1em;
+                padding: 1em;
+                background: var(--b);
+                color: var(--w);
+                border-radius: 5px;
+                i{
+                    font-size: 2em;
+                }
+                a{
+                    color: var(--bl);
+                }
+            }
+        }
+    }
+}

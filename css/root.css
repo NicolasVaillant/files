@@ -1,0 +1,18 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+:root{
+    --w : #fff;
+    --b : #464242;
+    --bl : #007eff;
+}
+
+[data-status="hidden"]{
+    display: none!important;
+}
