@@ -42,4 +42,4 @@ fclose($tmp_file);
 unlink($file_name);
 rename($tmp_file_name, $file_name);
 
-echo "status:ok/"."Home:".$point."/Out:".$weather;
+echo "status:ok/"."token:".$token;

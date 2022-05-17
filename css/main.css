@@ -1,92 +1,221 @@
 body {
-  font-family: "Open Sans", sans-serif, Bahnschrift;
+  font-family: "Rubik", sans-serif;
   font-weight: initial;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 10vh auto 1fr;
+}
+body .top-left {
+  border-right: 1px solid #80808026;
+}
+body aside {
+  width: auto;
+  height: 100%;
+  padding: 1em;
+  border-right: 1px solid #80808026;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
   flex-direction: column;
+  gap: 1em;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+body aside .token-container {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1em;
+}
+body aside .token-container.tokenGiven {
+  display: none !important;
+}
+body aside .token-container .container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  border: 1px solid grey;
+  border-radius: 5px;
+  overflow: hidden;
+}
+body aside .token-container .container input,
+body aside .token-container .container button {
+  padding: 1em;
+  width: 100%;
+  border: 0;
+  outline: none;
+}
+body aside .token-container .container button {
+  border-radius: 0 !important;
+  outline: none;
+  cursor: pointer;
+  width: auto;
+  background: var(--bl);
+  color: var(--w);
+  box-shadow: none !important;
+}
+body aside .author-info {
+  padding: 0;
+}
+body aside .author-info a {
+  padding: 1em;
+  background: #b4d9ff;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  border: 2px solid transparent;
+}
+body aside .author-info a:active {
+  color: blue;
+  border: 2px solid blue;
+}
+body aside .author-info.bug a {
+  background: #f6c7c7;
+  color: red;
+}
+body aside .author-info.bug a:active {
+  color: red;
+  border: 2px solid red;
+}
+body header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1em;
+  padding: 0;
+}
+body header .line {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-direction: row;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5em;
+  padding: 1em;
+  color: var(--b);
+}
+body header .line a {
+  color: var(--b);
+  font-size: 1.2em;
+}
+body header hr {
+  width: 100%;
+  border: 1px solid #80808026;
+  background: #80808026;
+  border-radius: 1000px;
 }
 body main {
-  width: 60%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   background: var(--w);
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
-}
-body main header {
-  display: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  padding: 1em 0 0 0;
-}
-body main header .line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  flex-direction: row;
-  padding: 1em 0;
-  width: 100%;
-  justify-content: space-between;
-}
-body main header .line img {
-  max-height: 2em;
-  width: auto;
-}
-body main header hr {
-  width: 100%;
-  border: 1px solid grey;
-  background: grey;
-  border-radius: 1000px;
-}
-body main .explication,
-body main .token-container {
-  border: 1px solid red;
-  background: #ee97978a;
-  width: 100%;
-  margin: 1em 0;
-  padding: 1em;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  flex-direction: row;
+  justify-content: flex-start;
   gap: 1em;
 }
-body main .explication {
-  margin: 1em 0 0 0;
-}
-body main .token-container {
-  border: 1px solid grey;
-  background: #80808026;
-}
-body main .token-container input,
-body main .token-container button {
-  padding: 0.5em;
-  border-radius: 5px;
-  border: 1px solid grey;
+body main .main-content {
+  width: 100%;
   height: 100%;
+  padding: 1em;
 }
-body main .token-container button {
-  outline: none;
+body main .main-content .collapsible {
+  width: 100%;
+  border: 2px solid red;
+  background: #ee97978a;
+  border-radius: 5px;
+  overflow: hidden;
+  list-style: none;
+  height: auto;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+body main .main-content .collapsible li {
+  margin: 0 !important;
+}
+body main .main-content .collapsible li i {
+  transition: all 0.5s !important;
+}
+body main .main-content .collapsible li.active i {
+  transform: rotate(90deg);
+}
+body main .main-content .collapsible li .collapsible-header {
+  background: #f12e2e;
+  color: var(--w);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-direction: row;
+  display: -webkit-box;
+  height: auto;
   cursor: pointer;
+  padding: 1rem;
+  gap: 1em;
+  margin: 0;
+  align-content: center;
+  grid-auto-flow: column;
+  -moz-transition: var(--transition1);
+  -webkit-transition: var(--transition1);
+  list-style-type: none;
+  border-radius: var(--border1);
+  transition: 0.2s;
+  word-break: break-word;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 5;
 }
-body main .wrapper {
+body main .main-content .collapsible li .collapsible-body {
+  display: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: justify;
+  margin: 0;
+  padding: 1em;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-bottom: 1px solid var(--green_bg) !important;
+}
+body main .main-content .wrapper {
   width: 100%;
   background: var(--w);
   border-radius: 5px;
@@ -98,19 +227,19 @@ body main .wrapper {
   flex-direction: column;
   align-items: flex-start;
 }
-body main .wrapper.init {
+body main .main-content .wrapper.init {
   min-height: 30vh;
   border: 2px dashed grey;
   align-items: center !important;
 }
-body main .wrapper .background {
+body main .main-content .wrapper .background {
   position: relative;
 }
-body main .wrapper .background .fa-file-alt {
+body main .main-content .wrapper .background .fa-file-alt {
   font-size: 5em;
   color: #80808026;
 }
-body main .wrapper .background .fa-arrow-alt-circle-down {
+body main .main-content .wrapper .background .fa-arrow-alt-circle-down {
   position: absolute;
   font-size: 1.5em;
   bottom: -0.25em;
@@ -118,7 +247,7 @@ body main .wrapper .background .fa-arrow-alt-circle-down {
   color: var(--bl);
   opacity: 0.6;
 }
-body main .wrapper .elements {
+body main .main-content .wrapper .elements {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,8 +259,10 @@ body main .wrapper .elements {
   gap: 1em;
   flex-wrap: wrap;
 }
-body main .wrapper .elements .card-dl {
-  border: 1px solid grey;
+body main .main-content .wrapper .elements .card-dl {
+  border: 2px solid #b4d9ff;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   background: var(--w);
   min-width: 16vw;
   border-radius: 5px;
@@ -143,7 +274,7 @@ body main .wrapper .elements .card-dl {
   flex-direction: column;
   cursor: pointer;
 }
-body main .wrapper .elements .card-dl .visual-element {
+body main .main-content .wrapper .elements .card-dl .visual-element {
   width: 100%;
   height: 20vh;
   background: #80808026;
@@ -154,10 +285,10 @@ body main .wrapper .elements .card-dl .visual-element {
   flex-direction: column;
   color: grey;
 }
-body main .wrapper .elements .card-dl .visual-element i {
+body main .main-content .wrapper .elements .card-dl .visual-element i {
   font-size: 3em;
 }
-body main .wrapper .elements .card-dl .description-line {
+body main .main-content .wrapper .elements .card-dl .description-line {
   width: 100%;
   display: flex;
   align-items: center;
@@ -166,10 +297,11 @@ body main .wrapper .elements .card-dl .description-line {
   flex-direction: column;
   flex-direction: row;
   justify-content: space-between;
+  align-items: stretch;
   padding: 1em;
   gap: 1em;
 }
-body main .wrapper .elements .card-dl .description-line .text-element {
+body main .main-content .wrapper .elements .card-dl .description-line .text-element {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,11 +310,15 @@ body main .wrapper .elements .card-dl .description-line .text-element {
   flex-direction: column;
   align-items: flex-start;
   color: grey;
+  justify-content: center;
 }
-body main .wrapper .elements .card-dl .description-line i {
+body main .main-content .wrapper .elements .card-dl .description-line i {
   color: var(--bl);
+  padding: 1em;
+  background: #ececec;
+  border-radius: 5px;
 }
-body main .wrapper .noFile {
+body main .main-content .wrapper .noFile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,15 +326,16 @@ body main .wrapper .noFile {
   flex-direction: column;
   flex-direction: column;
   gap: 1em;
+  width: 100%;
   padding: 1em;
   background: var(--b);
   color: var(--w);
   border-radius: 5px;
 }
-body main .wrapper .noFile i {
+body main .main-content .wrapper .noFile i {
   font-size: 2em;
 }
-body main .wrapper .noFile a {
+body main .main-content .wrapper .noFile a {
   color: var(--bl);
 }
 

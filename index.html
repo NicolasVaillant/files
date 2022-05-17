@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/root.css">
@@ -15,34 +15,57 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="fontawesome/css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js" defer></script>
-
+    
     <title>files</title>
 </head>
 
 <body>
-    <main>
-        <header>
-            <div class="line">
-                <div class="logo">
-                    <img src="resources/img/Np.png" alt="Logo nicolasvaillant.net">
-                </div>
-                <div class="home">
-                    <a href="https://nicolasvaillant.net"><i class="fas fa-home"></i></a>
-                </div>
-            </div>
-            <hr>
-        </header>
-        <div class="explication">
-            <p>
-                Ce site vous permet de récupérer des fichiers à télécharger.
-                Veuillez rentrer le token qui vous a été transmis.
-            </p>
-        </div>
-        <div class="token-container">
-            <input type="text" placeholder="Token" id="token">
+<div class="top-left"></div>
+<div></div>
+<div class="top-left"></div>
+<header>
+    <div class="line">
+        <h1>Récupérez vos fichiers</h1>
+        <a href="#">
+            <i class="fas fa-link"></i>
+        </a>
+    </div>
+</header>
+<aside>
+    <div class="token-container">
+        <div class="container">
+            <input type="text" placeholder="Rentrez votre Token" id="token">
             <button class="submit-token button-to-author">Valider</button>
         </div>
+    </div>
+    <div class="author-info">
+        <a href="mailto:contact@nicolasvaillant.net">
+            <i class="fas fa-envelope"></i>
+            Me contacter
+        </a>
+    </div>
+    <div class="author-info bug">
+        <a href="#">
+            <i class="fas fa-exclamation-triangle"></i>
+            Signaler un problème
+        </a>
+    </div>
+</aside>
+<main>
+    <div class="main-content">
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header">
+                    <i class="fas fa-chevron-right"></i>
+                    <p>Informations</p>
+                </div>
+                <div class="collapsible-body">
+                    <p class="explication--txt"></p>
+                </div>
+            </li>
+        </ul>
         <div class="wrapper init">
             <div class="background">
                 <i class="fas fa-file-alt"></i>
@@ -56,9 +79,7 @@
                     <div class="description-line">
                         <div class="text-element">
                             <p class="name-element">default.xx</p>
-                            <p class="size-element">
-                                <span id="size">00</span> Kb
-                            </p>
+                            <p class="size-element"></p>
                         </div>
                         <a href="" id="dl-icon" download>
                             <i class="fas fa-arrow-alt-circle-down"></i>
@@ -73,10 +94,10 @@
                     Votre token est peut-être erroné ou inexistant.
                     Contactez moi pour plus d'information.
                 </p>
-                <a href="mailto:contact@nicolasvaillant.net">contact@nicolasvaillant.net</a>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 </body>
 
 </html>

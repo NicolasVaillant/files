@@ -12,25 +12,18 @@ $token = $_GET["token"];
 $file_name = "results.json";
 $json = file_get_contents($file_name);
 $json_d = json_decode($json, true);
-$array = [];
+$append = "";
+
 foreach ($json_d as $value) {
     $token_s = $value['token'];
     $file_s = $value['file'];
 
     if($token === $token_s){
-        $filesize = filesize("../".$file_s);
-        $size = round($filesize/ 1024, 2);
-
-        $tempArray = array(
-            "status" => "1",
-            "file" => $file_s,
-            "size" => $size."KB",
-            "date" => date("d M y (H:i)")
-        );
-        $array[] = $tempArray;
+        $append = $file_s;
         break;
+    }else{
+        $append = "0";
     }
 }
 
-$json = json_encode($array);
-echo $json;
+echo $append;<?php
